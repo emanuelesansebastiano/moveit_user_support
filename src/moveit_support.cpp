@@ -239,12 +239,12 @@ namespace moveit_basics_functions
 	  std::vector <std::vector <double> > temp_matrix;
 	  std::vector <std::vector <double> > rot_matrix = gsf::RPY2rotMatrix(orientation);
 	  std::vector <std::vector <double> > trans_matrix = gsf::translation_matrix(positionCentreBase);
-	  std::vector <std::vector <double> > point_matrix = gsf::point2matrix_gen(gsf::makeVector3(0.0, 0.0, dimension.z/2));
+	  std::vector <std::vector <double> > point_matrix = gsf::translation_matrix(gsf::makeVector3(0.0, 0.0, dimension.z/2));
 
-	  bsf::matrix2Dprod(trans_matrix, rot_matrix, temp_matrix);
-	  bsf::matrix2Dprod(temp_matrix, point_matrix, temp_matrix);
+	  bsf::matrix2DPROD(trans_matrix, rot_matrix, temp_matrix);
+	  bsf::matrix2DPROD(temp_matrix, point_matrix, temp_matrix);
 
-	  z_moveit_position = gsf::matrix2point_gen(temp_matrix);
+	  z_moveit_position = gsf::transMatrix2XYZ(temp_matrix);
 
 	  moveit_msgs::CollisionObject collision_object = collision_obj_generator(id_collision_obj, z_moveit_position, orientation, dimension, solid_type, header_frame_id);
 
@@ -259,12 +259,12 @@ namespace moveit_basics_functions
 	  std::vector <std::vector <double> > temp_matrix;
 	  std::vector <std::vector <double> > rot_matrix = gsf::RPY2rotMatrix(orientation);
 	  std::vector <std::vector <double> > trans_matrix = gsf::translation_matrix(positionCentreBase);
-	  std::vector <std::vector <double> > point_matrix = gsf::point2matrix_gen(gsf::makeVector3(0.0, 0.0, dimension.z/2));
+	  std::vector <std::vector <double> > point_matrix = gsf::translation_matrix(gsf::makeVector3(0.0, 0.0, dimension.z/2));
 
-	  bsf::matrix2Dprod(trans_matrix, rot_matrix, temp_matrix);
-	  bsf::matrix2Dprod(temp_matrix, point_matrix, temp_matrix);
+	  bsf::matrix2DPROD(trans_matrix, rot_matrix, temp_matrix);
+	  bsf::matrix2DPROD(temp_matrix, point_matrix, temp_matrix);
 
-	  z_moveit_position = gsf::matrix2point_gen(temp_matrix);
+	  z_moveit_position = gsf::transMatrix2XYZ(temp_matrix);
 
 	  moveit_msgs::CollisionObject collision_object = collision_obj_generator(id_collision_obj, z_moveit_position, quat, dimension, solid_type, header_frame_id);
 
@@ -279,12 +279,12 @@ namespace moveit_basics_functions
 	  std::vector <std::vector <double> > temp_matrix;
 	  std::vector <std::vector <double> > rot_matrix = gsf::RPY2rotMatrix(orientation);
 	  std::vector <std::vector <double> > trans_matrix = gsf::translation_matrix(positionCentreBase);
-	  std::vector <std::vector <double> > point_matrix = gsf::point2matrix_gen(gsf::makeVector3(0.0, 0.0, height/2));
+	  std::vector <std::vector <double> > point_matrix = gsf::translation_matrix(gsf::makeVector3(0.0, 0.0, height/2));
 
-	  bsf::matrix2Dprod(trans_matrix, rot_matrix, temp_matrix);
-	  bsf::matrix2Dprod(temp_matrix, point_matrix, temp_matrix);
+	  bsf::matrix2DPROD(trans_matrix, rot_matrix, temp_matrix);
+	  bsf::matrix2DPROD(temp_matrix, point_matrix, temp_matrix);
 
-	  z_moveit_position = gsf::matrix2point_gen(temp_matrix);
+	  z_moveit_position = gsf::transMatrix2XYZ(temp_matrix);
 
 	  moveit_msgs::CollisionObject collision_object = collision_obj_generator(id_collision_obj, z_moveit_position, orientation, height, radius, solid_type, header_frame_id);
 
@@ -299,12 +299,12 @@ namespace moveit_basics_functions
 	  std::vector <std::vector <double> > temp_matrix;
 	  std::vector <std::vector <double> > rot_matrix = gsf::RPY2rotMatrix(orientation);
 	  std::vector <std::vector <double> > trans_matrix = gsf::translation_matrix(positionCentreBase);
-	  std::vector <std::vector <double> > point_matrix = gsf::point2matrix_gen(gsf::makeVector3(0.0, 0.0, height/2));
+	  std::vector <std::vector <double> > point_matrix = gsf::translation_matrix(gsf::makeVector3(0.0, 0.0, height/2));
 
-	  bsf::matrix2Dprod(trans_matrix, rot_matrix, temp_matrix);
-	  bsf::matrix2Dprod(temp_matrix, point_matrix, temp_matrix);
+	  bsf::matrix2DPROD(trans_matrix, rot_matrix, temp_matrix);
+	  bsf::matrix2DPROD(temp_matrix, point_matrix, temp_matrix);
 
-	  z_moveit_position = gsf::matrix2point_gen(temp_matrix);
+	  z_moveit_position = gsf::transMatrix2XYZ(temp_matrix);
 
 	  moveit_msgs::CollisionObject collision_object = collision_obj_generator(id_collision_obj, z_moveit_position, quat, height, radius, solid_type, header_frame_id);
 
